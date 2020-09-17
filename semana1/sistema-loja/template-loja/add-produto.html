@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
-    <style>
-        body{
-            font-family: sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="style-addProdutos.css">
 </head>
+
 <body>
-    <div>
-        <p>Iloja</p>
+    <div class="logo">
+        <img src="./imgs-produtos/ishopLogo.jpg" alt="Logo Ishop">
     </div>
-    
-    <div>
+
+    <nav>
         <a href="index.html">Página Inicial</a>
         <a href="ctrl-estoque.html">Controle de Estoque</a>
         <a href="add-produto.html">Adicionar Produto</a>
         <a href="funcionarios.html">Funcionários</a>
+    </nav>
+
+    <div class="addProdutos-div">
+        
+        <h2>Adicionar Produto</h2>
+        
+        <form action="" class="addProdutos-form">
+           
+            <div>
+                <label class="addProdutos-label" for="link-foto">Link para foto: </label>
+                <input type="url" id="link-foto" name="link-foto" class="addProduto-Input">
+            </div>
+
+            <div>
+                <label class="addProdutos-label" for="descricao">Descrição do produto: </label>
+                <input type="text" id="" name="descrição" id="descricao" class="addProduto-Input">
+            </div>
+
+            <div>
+                <label class="addProdutos-label" for="preco">Preço (em R$): </label>
+                <input type="" id="" name="preço" id="preco" class="addProduto-Input">
+            </div>
+
+            <div>
+                
+                <label class="addProdutos-label" for="quantidadeDisponivel">Quantidade disponível: </label>
+                <input type="text" name="quantidade" id="quantidadeDisponivel" class="addProduto-Input">
+            </div>
+
+            <div class="form-add">
+                <button type="submit" class="form-add-button">Adicionar</button>
+            </div>
+
+        </form>
     </div>
 
-    
-    <h2>Adicionar Produto</h2>
-    <form action="">
-        <div>
-            <label for="link-foto">Link para foto: </label>
-            <input type="url" id="link-foto" name="link-foto">
-        </div>
-        
-        <div>
-            <label for="descricao">Descrição do produto: </label>
-            <input type="text" id="" name="descrição" id="descricao">
-        </div>
-        
-        <div>
-            <label for="preco">Preço (em R$): </label>
-            <input type="" id="" name="preço" id="preco">
-        </div>
-        
-        <div>
-            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
 
-            <label for="quantidadeDisponivel">Quantidade disponível: </label>
-            <input type="text" name="quantidade" id="quantidadeDisponivel">
-        </div>
 
-        <div class="form-add">
-            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="submit">Adicionar</button>
-        </div>
-
-    </form>
 
 </body>
+
 </html>
