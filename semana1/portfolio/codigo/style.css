@@ -1,0 +1,286 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'pattanakarnbold';
+    src: url('pattanakarn_bold-webfont.woff2') format('woff2'),
+         url('pattanakarn_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pattanakarnextrabold';
+    src: url('pattanakarn_extrabold-webfont.woff2') format('woff2'),
+         url('pattanakarn_extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body{
+    min-width: 1110 px;
+    max-width: 1920px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    text-align: center;
+    background-color: #262622;
+    color: #46fdff;
+    font-size: 20pt;
+    margin: auto;
+}
+
+.container-Nav{
+    width: 1110px;
+    height: 150px;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.logoNav{
+    width: 150px;
+    height: 75px;
+    float: left;
+    margin: 10px 0;
+}
+nav{
+    float: right;
+    padding: 20px 0;
+}
+
+nav a{
+    text-decoration: none;
+    color: #46fdff;
+}
+
+nav a:hover{
+    color: #262622;
+    font-size: 25pt;
+    transition: 0.8s;
+    background-color:#46fdff;
+    cursor: pointer;
+}
+
+.container-About{
+    margin: 80px 0 150px 0;
+}
+
+#pedroPhoto{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin-bottom: 50px;
+    border: 5px solid #46fdff;
+}
+
+h1{
+    font-size: 35pt;
+    margin-bottom: 20px;
+}
+
+p{
+    font-weight: 300;
+    font-size: 17pt;
+}
+
+
+.intro{
+    width: 800px;
+    margin: auto;
+}
+
+ul{
+    
+}
+li{
+    font-weight: 400;
+    font-size: 16pt;
+    list-style: none;
+}
+
+.container-Edu-Exp{
+    margin-bottom: 150px;
+    width: 1110px;
+   margin: auto;
+}
+
+
+.div-Edu{
+    margin-bottom: 150px;
+    width: 500px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+.div-Edu-Ul{
+    text-align: left;
+}
+.div-Exp{
+    margin-bottom: 150px;
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+
+}
+
+.container-Projects{
+    width: auto;
+    margin-bottom: 150px;
+}
+
+.div-projects{  
+    display: inline-block;
+   
+}
+
+.projects-img{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 5px;
+    
+}
+
+.projects-img:hover{
+    width: 350px;
+    height: 350px;
+    transition: 0.7s;
+}
+
+.div-projects-p{
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: #46fdff;
+    color: #262622;
+    border-radius: 20px;
+    height: 30px;
+    padding-top: 3px;
+}
+
+.div-projects-p:hover{
+    font-size: 16pt;
+    transition: 0.4s;
+    background-color: #262622;
+    color: #46fdff;
+    cursor: pointer;
+}
+
+
+.container-Habilities{
+    margin-bottom: 150px;
+}
+
+
+.hability-bar-white{
+    width: 250px;
+    height: 14px;
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    
+   
+}
+
+.hability-bar-JS{
+    width: 200px;
+    height: 14px;
+    background-color: #46fdff;
+    border-radius: 20px;
+    margin: 10px 0;
+
+}
+
+.hability-bar-HTML{
+    width: 230px;
+    height: 14px;
+    background-color: #46fdff;
+    border-radius: 20px;
+    margin: 10px 0;
+
+    
+}
+.hability-bar-CSS{
+    width: 130px;
+    height: 14px;
+    background-color: #46fdff;
+    border-radius: 20px;
+    margin: 10px 0;
+
+}
+
+.container-Contact{
+    width: 500px;
+    margin: auto;
+}
+
+form{
+
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+
+label{
+    font-weight: 400;
+    font-size: 16pt;
+    display: block;
+  
+}
+
+input{
+    height: 16pt;
+    width: 400px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14pt;
+}
+
+#message{
+    height: 150px;
+    padding-top: 0;
+}
+
+.form-subimit{
+    width: 150px;
+    padding: 0;
+    border: none;
+    background: none;
+    background-color: #46fdff;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 14pt;
+    color: #262622;
+}
+
+.form-subimit:hover{
+    background-color: #262622;
+    color: #46fdff;
+    font-size: 16pt;
+    transition: 0.6s;
+    border: 0.5px solid #46fdff;
+}
+
+footer{
+    margin: 50px 0 50px 0;
+    
+}
+
+.footer-socialMedia{
+    width: 35px;
+    height: 35px;
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
