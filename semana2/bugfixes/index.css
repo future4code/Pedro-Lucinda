@@ -11,6 +11,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    text-decoration: none;
 }
 
 h2 {
@@ -111,6 +112,16 @@ table {
     text-align: center;
 }
 
+button{
+    padding: 0;
+    border: none;
+    background: none;   
+}
+
+button:active{
+    outline: none;   
+ }
+
 td button {
     background-color: #fadf63;
     width: 150px;
@@ -129,7 +140,6 @@ img{
     height: 50px;
 }
 
-
 #back-button {
     background-color: white;
     width: 100px;
@@ -143,7 +153,12 @@ img{
 #back-button:hover {
     background-color: #635a3d
 }
-
+#back-button:active{
+    outline: none;
+}
+#back-button:active{
+    outline: none;
+}
 .icone{
     background-color: white;
     width: 15px;
@@ -157,6 +172,7 @@ img{
 
 .button-Page-Comprar:active{
     color: white;
+    outline: none;
 }
 
 
