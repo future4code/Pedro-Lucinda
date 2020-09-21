@@ -139,3 +139,10 @@ img{
 #back-button:hover {
     background-color: #635a3d
 }
+
+.icone{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
