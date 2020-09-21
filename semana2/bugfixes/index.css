@@ -154,3 +154,9 @@ img{
 .button-Page-Comprar:active{
     color: white;
 }
+
+
+#searchInput{
+    border: none;
+    border-bottom: 3px solid black;
+}
