@@ -146,3 +146,11 @@ img{
     height: 15px;
     margin-left: 5px;
 }
+
+.button-Page-Comprar:hover{
+   background-color: #f9cd0a;
+}
+
+.button-Page-Comprar:active{
+    color: white;
+}
