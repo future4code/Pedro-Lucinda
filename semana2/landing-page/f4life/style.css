@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #132235;
+}
+
+
+
+
+/* Menu de navegacao */
+
+nav{
+    background-color: #132235;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.container-nav{
+    max-width: 1280px;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+}
+
+.logo-nav{
+    width: 126px;
+    height: 56px;
+  
+ 
+}
+
+ul{
+   
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content:flex-end;
+}
+
+a{
+   text-decoration: none;
+   list-style: none;
+   
+}
+
+li{
+    width: 150px;
+    font-family: 'Roboto',sans-serif;
+    color: white;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+/* main */
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+}
+
+
+
+
+
+/* Header */
+
+
+header{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+
+}
+
+
+.bg-header{
+    width: 100vw;
+    /* height: 100vh; */
+    position: relative;
+
+}
+
+.header-section{
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    top: 30vh;
+    display: flex;
+
+}
+
+header h1{
+    width: 100%;
+    font-weight: 600;
+    font-size: 4em;
+    text-align: center;
+}
+
+h1{
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 4em;
+    text-align: center;
+}
+
+h3{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+
+
+
+/* Vantagens */
+
+.vantagens{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    
+}
+
+.vantagens-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.vantagem-card{
+    width: 20%;
+    height: 35vh;
+    background-color: rgb(240, 240, 240);
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px -4px rgba(83, 100, 112, 0.4),
+                0 24px 32px -4px rgba(83, 100, 112, 0.2);
+                
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 250px;
+    max-width: 270px;
+    margin-bottom: 50px;
+}
+
+.vantagem-card:hover{
+    position: relative;
+    transform: scale(1.1);
+    transition: ease-in-out 0.4s;
+    background-color: #6ddad3;
+    
+}
+
+.vantagem-card img{
+    align-self: flex-start;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px; 
+}
+
+
+
+
+
+/* Imoveis */
+
+.imoveis{
+display: flex;
+flex-direction: column;
+margin: auto;
+
+}
+
+.imoveis-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    max-width: 1280px;
+}
+
+.imoveis-card{
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px -4px rgba(83, 100, 112, 0.4),
+                0 24px 32px -4px rgba(83, 100, 112, 0.2);
+    border-radius: 25px;
+    background-color: rgb(240, 240, 240);
+    height: auto;
+}
+
+.imoveis-card:hover{
+    position: relative;
+    transform: scale(1.2);
+    transition: ease-in-out 0.5s;
+    background-color: #6ddad3;
+}
+
+.img-ap{
+    width: 100%;
+    min-width: 200px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+.imoveis-button{
+    margin-top: 50px;
+    height: 50px;
+    width: 20vw;
+    align-self: center;
+    background-color: #6ddad3;
+    border: none;
+    color: #132235;
+    font-size: 1.3em;
+    font-weight: bold;
+    box-shadow: 0 4px 10px -4px rgba(83, 100, 112, 0.4),
+    0 24px 32px -4px rgba(83, 100, 112, 0.2);
+
+}
+
+
+
+
+/* Contact */
+
+form{
+    margin-top: 200px;
+    background-color: #132235;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+   
+}
+
+form h3{
+    font-size: 3em;
+    color: white;
+
+}
+
+label{
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+#name, 
+#email{
+    border-radius: 25px;
+    border: none;
+    height: 30px;
+    width: 40vw;
+ 
+}
+
+#message{
+    border-radius: 25px;
+    border: none;
+    height: 200px;
+    width: 40vw;
+
+}
+
+#form-button{
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    margin-top: 50px;
+    width: 40vw;
+    height: 50px;
+    box-shadow: 0 4px 10px -4px rgba(83, 100, 112, 0.4),
+    0 24px 32px -4px rgba(83, 100, 112, 0.2);
+    font-size: 1.4em;
+    background-color: #6ddad3;
+    color: #132235;
+}
+
+#name, 
+#email,
+#message{
+    padding: 20px;
+    justify-items: flex-start;
+    
+}
+
+
+#name:hover, 
+#email:hover,
+#message:hover{
+    transform: scale(1.05);
+    transition: ease-in-out 0.3s;
+    box-shadow: 0 4px 10px -4px rgba(133, 146, 155, 0.104),
+    0 24px 32px -4px rgba(119, 131, 140, 0.091);
+}
+
+#form-button:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.2s;
+}
+
+label{
+    color: #6ddad3;
+}
+
+
+
+
+
+
+/* Footer */
+
+
+footer{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.footer-logo{
+    width: 126px;
+    height: 56px;
+    
+}
+
+footer p{
+    text-align: center;
+    width: 100%;
+    color: #132235;
+    
+}
+
+
+.socialMedia{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
