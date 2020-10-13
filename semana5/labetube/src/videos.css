@@ -1,0 +1,20 @@
+.box-pagina-principal {
+    display:flex;
+    flex-direction:column;
+    height: 40vh;
+    margin: 10px;
+    align-items: left;
+  }
+
+
+  @media screen and (max-width: 600px) and (min-width: 300px) {
+    .box-pagina-principal{
+      padding: 20px;
+      width: 100vw;
+    }
+
+    .box-pagina-principal p, h4{
+      margin-left: 20px;
+    }
+
+  }
