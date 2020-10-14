@@ -1,0 +1,19 @@
+.box{
+	box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+	transition: box-shadow 83ms;
+
+	width: 758px;
+	height: clamp(40vh, 55vh, 70vh);
+
+	margin: 30px auto;
+	font-family: sans-serif;
+
+	padding: 20px;
+}
+
+.box h3{
+	font-size: 15pt;
+	margin-bottom: 40px;
+	font-weight: 500;
+}
+
