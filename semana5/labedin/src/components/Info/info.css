@@ -1,0 +1,27 @@
+.info{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	align-items: center;
+}
+
+.textInfo{
+	display: flex;
+	flex-direction: column;
+	margin-left: 40px;
+}
+
+.textInfo h4{
+	font-size: 14pt;
+	margin: 10px 0;
+	
+}
+
+.textInfo p{
+	margin-top: 0;
+}
+
+.info img{
+	width: 50px;
+	height: 50px;
+}

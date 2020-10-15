@@ -1,0 +1,62 @@
+
+.profileIntro{
+	box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+	transition: box-shadow 83ms;
+
+	width: 800px;
+	height: clamp(40vh, 55vh, 70vh);
+
+	display: flex;
+	flex-direction: column;
+	margin: 30px auto;
+
+	font-family: sans-serif;	
+}
+
+.bg{
+	margin-bottom: 30px;
+	max-width: 1000px;
+	min-width: 800px;
+	max-height: 200px;
+	min-height: 100px;
+}
+
+.person{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+
+	position: absolute;
+	top: 200px;
+	margin-left: 30px;
+
+	border: 6px solid white;
+}
+
+.profileIntro h1{
+	margin-top: 100px;
+	font-weight: 500;
+	font-size: 20pt;
+	margin-bottom: 0;
+}
+
+h1, .profileIntro p, .city, .connections{
+	margin-left: 20px;
+}
+
+ p{
+	margin: 0;
+	line-height: 18pt;
+	font-size: 14pt;
+}
+
+.city{
+	font-size: 12pt;
+}
+
+.connections{
+	font-weight: 600;
+	color: #2484BF;
+
+	font-size: 12pt;
+}
