@@ -1,0 +1,43 @@
+.post-container {
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    width: 500px;
+    margin-bottom: 10px;
+    height: auto;
+   
+}
+
+.post-header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.post-footer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.user-photo {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.post-photo {
+    width: 100%;
+}
+
+.likeAndTag, .shareAndComentario{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.tag, .share{
+    margin: 0 5px;
+}
