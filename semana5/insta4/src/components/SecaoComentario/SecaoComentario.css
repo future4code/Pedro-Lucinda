@@ -1,0 +1,38 @@
+.comment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+}
+
+.input-comentario {
+    width: 100%;
+    margin-right: 5px;
+
+    outline: none;
+    border: none;
+    border-width: 100%;
+    border-top: 1px solid #C5C5C5;
+
+    height: 50px;
+}
+
+
+.comment-container button{
+    height: 30px;
+
+    font-weight: 600;
+    font-size: 15px;
+    
+    border: none;
+    background-color: white;
+    outline: none;
+
+    color: rgba(68,163,246, 0.6);
+}
+
+.comment-container button:hover{
+    color:#44A3F6;
+}
