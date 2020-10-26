@@ -1,0 +1,32 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.pageWhatsBg{
+	width: 100vw;
+	height: 100vh;
+
+	background-color: #DADBD4;
+
+}
+
+.greenBgBox{
+	background-color:#259688;
+	height: 125px;
+}
+
+.content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:center;
+
+	position: absolute;
+	top: 50px;
+	left: 27%;
+
+	font-family: 'Roboto', sans-serif;
+
+}

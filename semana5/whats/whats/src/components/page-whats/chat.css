@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.chatContainer{
+	background-image: url('../../img/bg.png');
+	width: 40vw;
+	height: 80vh;
+	padding: 40px;
+
+	min-width: 800px;
+	min-height: 500px;
+
+	border: 1px solid rgba(240, 240, 240, 0.653);
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.146);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.typeBar{
+	width: 100%;
+	height: 70px;
+	
+	background-color: #F0F0F0;
+
+	position: absolute;
+	top: 85vh;
+
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	padding: 20px;
+}
+
+.typeBar-Icon, .sendIcon{
+	width: 30px;
+	height: 30px;
+}
+
+.textInp{
+	width: 50vw;
+}
+
+.nameInp, .textInp{
+	height: 45px;
+	padding: 20px;
+	
+	border: none;
+	background-color: white;
+	border-radius: 30px;
+	outline: none;
+
+	color: black;
+	font-size: 17px;
+	
+}
+
+
+.typeBar-Icon, .sendIcon{
+	margin: 10px;
+}
+
+button{
+	border: none;
+	outline: none;
+	box-shadow: none;
+	background-color: #F0F0F0;
+
+	width: 45px;
+	height: 45px;
+}
+
+button:hover{
+	width: 43px;
+	height: 43px;
+
+	transition: ease-in-out 0.2s
+}
+
+
+.chatDisplay{
+	display: flex;
+	flex-direction: column-reverse;
+	align-self: start;
+
+	width: 100vw;
+	font-size: 20px;
+	flex-grow: 1;
+}

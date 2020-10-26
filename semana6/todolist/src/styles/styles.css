@@ -1,0 +1,37 @@
+.app {
+  font-family: "Roboto", sans-serif ;
+  font-size: 16px;
+  color: #4D6F80;
+
+  margin: 50 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  background: #EBF2F5;
+}
+
+button{
+  background-color: #37C77F;
+  color: rgba(255,255,255,1);
+  border-radius: 20px;
+
+  width: 15%;
+  height: 40px;
+
+  border: none;
+  outline: none;
+
+  font-weight: bold;
+  font-size: 15px;
+
+
+}
+
+h1,p,label{
+  background-color: white;
+}
+
+.clearBtn{
+  position: relative;
+  background-color: #c74037;
+}
