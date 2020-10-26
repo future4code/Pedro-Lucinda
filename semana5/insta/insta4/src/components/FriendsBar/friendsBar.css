@@ -1,0 +1,11 @@
+.friendsBar{
+	display: flex;
+	justify-content:space-evenly;
+	align-items: center;
+	
+	width: 480px;
+	margin-bottom: 30px;
+	padding: 10px;
+
+	border: 1px solid rgba(var(--b6a,219,219,219),1);
+}
