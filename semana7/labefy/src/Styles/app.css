@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* color: #F1F1F1; */
+	font-family: 'Rubik', sans-serif;
+}
+
+.App {
+	display: flex;
+	justify-content: space-between;
+	width: 100vw;
+	height: 100vw;
+
+	background: linear-gradient(113.83deg, #121212 0.59%, #121212 99.74%);
+	color: #F1F1F1;
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+
+	width: 224px;
+	height: 100vw;
+	padding: 50px;
+
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 18px;
+color: #646464;
+
+	background-color: #030303;
+	
+}
+
+.sidebar img {
+	width: 145.91px;
+	height: 43.35px;
+	margin-bottom: 30px;
+}
+
+.sidebar button {
+	background-color: #030303;
+	border: none;
+	color: #646464;
+
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 18px;
+	width: 50px;
+	
+}
+
+.sidebar button:hover,
+.playlistsList li:hover,
+.addPlay p:hover {
+	color: #ffffff;
+	transition: ease-in-out 0.2s;
+}
+
+.addPlay{
+	padding: 0;
+	display: flex;
+	align-items: center;
+	width: 110%;
+	justify-content:space-between;
+	margin: 20px 0 20px 0;
+	
+}
+
+.addPlay .plusIcon{
+	
+	width: 32px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+}
+
+.playlistsList{
+	list-style: none;
+}
+
+.playlistsList li{
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 600;
+}
+
+.App .component{
+	flex-grow: 1;
+	padding-right: 50px;
+}
