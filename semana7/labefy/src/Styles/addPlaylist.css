@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	/* color: #F1F1F1; */
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .addPlaylistComponent {
@@ -12,6 +12,7 @@
 	align-items: left;
 	font-weight: 400;
 	padding: 70px 50px;
+	min-width: 600px;
 }
 
 .addPlaylistComponent h1 {
@@ -20,6 +21,8 @@
 
 .addPlayInp {
 	display: flex;
+	align-items: center;
+	/* justify-content:center; */
 	margin: 20px 0;
 }
 
@@ -42,6 +45,7 @@
 	align-items: center;
 	justify-content: center;
 	border: none;
+	margin-left: 15px;
 	box-shadow: none;
 	border-radius: 100%;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
@@ -49,7 +53,7 @@
 	background: rgba(0, 0, 0, 0);
 }
 
-.addPlayInp button, .addPlayInp button img, . {
+.addPlayInp button, .addPlayInp button img {
 	width: 30px;
 	height: 30px;
 }
@@ -60,25 +64,25 @@
 
 .playlist button {
 	background: rgba(0, 0, 0, 0);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+	/* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8); */
 	outline: none;
 	border: none;
+	border-radius: 100%;
 	margin-left: 20px;
 }
 
-.playlist button img, .playlist button{
+.playlist button img, .playlist button {
 	width: 20px;
 	height: 20px;
 }
-.playlist button img:hover,
- .playlist button:hover{
-	transform: scale(0.96, 0.96);
-}
 
+.playlist button img:hover, .playlist button:hover {
+	transform: scale(0.96, 0.96);
+	
+}
 .playlist {
 	display: flex;
 	align-items: center;
 	justify-content: left;
-
 	margin-bottom: 15px;
 }

@@ -94,7 +94,6 @@ export default class AddPlaylist extends React.Component {
           />
           <button onClick={this.createPlaylist}><img src={addIcon} alt="Add Playlist"/></button>
         </div>
-
         <div className="playlistsList">{this.renderPlaylistList()}</div>
       </div>
     );

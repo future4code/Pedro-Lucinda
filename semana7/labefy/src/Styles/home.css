@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* color: #F1F1F1; */
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.homeContainer{
+	display: flex;
+	align-items: left;
+
+	height: auto;
+
+	flex-direction: column;
+	margin: 100px 32px 0 32px;
+	min-width: 600px;
+	
+}
+
+.homeContainer h1{
+	margin-left: 10px;
+}
+
+.playlistsCards{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	flex-wrap: wrap;
+	
+}
+
+.card{
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+
+	margin: 24px 16px 0 16px;
+
+	padding: 16px;
+	
+	width: clamp(200px, 203px, 210px);
+	height: clamp(263px, 273px, 283px);
+
+
+	background:rgba(255,255,255,0.08);
+	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+
+border-radius: 10px;
+
+}
+
+.card:hover{
+	background:rgba(255,255,255,0.2);
+box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.9);
+border-radius: 10px;
+transition: ease-in-out 0.3s;
+}
+.card img{
+	margin: 0;
+	height: 171px;
+	width: 171px;
+}
+
+.card h3, .card p{
+	margin-left: 10px;
+}
+
+.cardText{
+	width: 100%;
+	margin-top: 16px;
+
+}
+
+.cardText p{
+	margin-top: 6px;
+}

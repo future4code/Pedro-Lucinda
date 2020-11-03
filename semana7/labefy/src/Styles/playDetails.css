@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	/* color: #F1F1F1; */
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .playDetailComponent {
@@ -12,6 +12,7 @@
 	align-items: left;
 	font-weight: 400;
 	padding: 70px 50px;
+	min-width: 600px;
 }
 
 .inputsNewTrack {
@@ -73,6 +74,27 @@
 	outline: none;
 	
 }
+.track button,
+.track button img {
+	width: 20px;
+	height: 20px;
+	border: none;
+
+	margin-left: 10px;
+
+}
+
+.track button{
+	border-radius: 100%;
+	
+	outline: none;
+	background: rgba(0, 0, 0, 0);
+}
+
+.track button:hover{
+	transform: scale(0.96, 0.96);
+}
+
 
 audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
 	background-color: #66d36e;

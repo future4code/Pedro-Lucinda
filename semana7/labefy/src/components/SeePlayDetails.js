@@ -3,6 +3,7 @@ import axios from "axios";
 import '../Styles/playDetails.css'
 
 import addIcon from "../assets/addIcon.svg"
+import removeIcon from '../assets/removeIcon.svg'
 
 const baseUrl =
   "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/";
@@ -51,16 +52,11 @@ export default class SeePlayDetails extends React.Component {
 			artist: this.state.trackArtist,
 			url: this.state.trackUrl,
 		}
-
 		const id = this.props.play.id;
-//https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks
     try {
 			await axios.post(`${baseUrl}${id}/tracks`, body,axiosConfig);
-
 			this.setState({ trackName: "",  trackArtist: "",  trackUrl: "" });
-
 			this.getTracks();
-			
     } catch (error) {
       console.log(error.message);
     }
@@ -74,7 +70,16 @@ export default class SeePlayDetails extends React.Component {
 	}
 	onChangetrackUrl = (event) => {
 		this.setState({trackUrl: event.target.value})
-	}
+  }
+  
+  removeTrack = (id) => {
+    //https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks/:trackId
+    const newArray = this.state.playTracks.filter(track => track.id !== id)
+
+   axios.delete(`${baseUrl}${this.state.play.id}/tracks/${id}`,axiosConfig)
+
+   this.setState({ playTracks: newArray})
+  }
 
   render() {
 
@@ -88,9 +93,10 @@ export default class SeePlayDetails extends React.Component {
             <p> {track.artist} </p>
 						<audio controls>
 						<source src={track.url} type="audio/mp3"/>
+          
 						</audio>
-						
-            {/* <button onClick={() => this.delTrack(track.id)}>Remove</button> */}
+					  <button onClick={() => this.removeTrack(track.id)}><img src={removeIcon}  alt="Remove track"/></button>	
+            
           </div>
         );
       });
