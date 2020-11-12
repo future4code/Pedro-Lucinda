@@ -1,0 +1,38 @@
+.matchCard-container {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: left;
+	width: 300px;
+	height: 424px;
+	margin: 32px 0;
+	padding: 20px;
+	background: url("../assets/loadingScreen.png")no-repeat center center fixed;
+	
+	border-radius: 6px;
+	border: 1px solid rgba(172, 172, 172, 0.44);
+	box-shadow: 0 0 20px rgba(172, 172, 172, 0.701);
+}
+
+.matchCard-container:hover{
+	transform: scale(0.98, 0.98);
+	transition: ease-in-out 0.4s;
+}
+
+.matchCard-text{
+	width: 100%;
+	background: rgba(255, 255, 255, 0.783);
+	padding:  10px ;
+	border-radius: 20px;
+}
+
+.matchCard-container h2, .matchCard-container p{
+	color: rgb(0, 0, 0);
+}
+
+.matchCard-container h2{
+	font-size: 3rem;
+}
+
+.matchCard-container p{
+	font-size: 1.4rem;
+}

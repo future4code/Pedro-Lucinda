@@ -1,0 +1,30 @@
+:root{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+
+    --main-color: #ed2d7a;
+    --green: #27F234;
+    --gray:#B5B5B5;
+    --dark-gray: #2D2D2C;
+    --orange: #f37358;
+    --mid-main-color: #ef5665;
+    --main-gradient: linear-gradient(22deg, rgba(243,115,88,1) 0%, rgba(239,86,101,1) 50%, rgba(237,45,122,1) 100%);
+}
+
+@keyframes up {
+	from {
+			opacity: 0;
+			transform: translateY(16px)
+	}
+	to {
+			opacity: 1;
+			transform: translateY(0)
+	}
+}
+
+.animateUp {
+	animation-name: up;
+	animation-duration: 500ms;
+	animation-fill-mode: backwards;
+}
+
