@@ -1,0 +1,23 @@
+.tripCard-container {
+	width: 300px;
+	height: 300px;
+	margin: 0 10px 10px 0;
+	padding: 15px;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: flex-end;
+}
+
+.tripCard-container:hover {
+	transform: scale(1.05, 1.05);
+	transition: ease-in-out 0.2s;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.tripCard-container img {
+	width: 100%;
+	height: 90%;
+}

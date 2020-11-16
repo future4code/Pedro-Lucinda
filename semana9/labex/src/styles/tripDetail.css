@@ -1,0 +1,22 @@
+.tripDetail-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 70px;
+}
+
+.tripDetail-img {
+	margin-right: 25px;
+	width: 492px;
+	height: 492px;
+	border: 1px solid black;
+}
+
+.tripDetail-text {
+	margin-left: 16px;
+	width: 492px;
+	height: 492px;
+}
+
+.tripDetail-container p, h4, button {
+	margin: 10px 0;
+}

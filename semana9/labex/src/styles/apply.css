@@ -1,0 +1,18 @@
+.apply-container, .createTrip-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 70px;
+}
+
+.apply-form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 54px;
+}
+
+.apply-form .apply-formDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
