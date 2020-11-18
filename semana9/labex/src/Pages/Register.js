@@ -6,6 +6,8 @@ import { SendBtn } from "../components/styledComponents/Buttons";
 import "../styles/login.css";
 //Routes
 import { useHistory } from "react-router-dom";
+//Services
+import api from "../services/api";
 
 const Register = () => {
   const [password, setPassword] = useState("");
@@ -21,14 +23,31 @@ const Register = () => {
   }
 
   function handleRegister() {
-    if (password !== undefined && email !== undefined) {
-      alert("Registered successfully");
-      return history.push("/");
-    }else{
-      alert("Please inset a valid email and password")
-    }
+    const body = {
+      email: email,
+      password: password,
+    };
+
+    api
+      .post("/signup", body, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (!response.data.success) {
+          alert("Please insert the correct email and password");
+        } else {
+          alert("Registered successfully");
+          history.push("/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Please inset a valid email and password or register");
+      });
+
   }
-  
 
   return (
     <div className="login-container">

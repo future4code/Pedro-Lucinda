@@ -31,16 +31,16 @@ const TripDetail = () => {
       </div>
 
       <div className="tripDetail-text">
-        <H1> {tripPage[0].name} </H1>
+        <H1> {tripPage.name} </H1>
         <H4> Planet: </H4>
-        <P> {tripPage[0].planet} </P>
+        <P> {tripPage.planet} </P>
 
         <H4> Date: </H4>
-        <P> {tripPage[0].date} </P>
+        <P> {tripPage.date} </P>
 
         <H4> Description: </H4>
-        <P> {tripPage[0].description} </P>
-        <SendBtn onClick={() => handleGoToApply(tripPage[0].id)}>Apply</SendBtn>
+        <P> {tripPage.description} </P>
+        <SendBtn onClick={() => handleGoToApply(tripPage.id)}>Apply</SendBtn>
       </div>
     </div>
   );

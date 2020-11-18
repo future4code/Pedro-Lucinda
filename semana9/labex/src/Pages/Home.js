@@ -9,17 +9,35 @@ import { TripsContext } from "../contex/TripsContext";
 import { TripPageContext } from "../contex/TripPageContext";
 //Routes
 import { useHistory } from "react-router-dom";
+//services
+import api from "../services/api";
 
 const Home = () => {
   const { trips } = useContext(TripsContext);
   const { setTripPage } = useContext(TripPageContext);
   const history = useHistory();
-  
+
   function handleDetailsPage(id) {
-    const tripDetails = trips.filter((trip) => trip.id === id);
-    setTripPage(tripDetails && tripDetails);
-    history.push("/TripDetail");
+    api
+      .get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/caio-dumont/trip/3Ga6Stvj6B687TNgFK72",
+        {
+          headers: {
+            auth: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        setTripPage(res.data.trip);
+        history.push("/TripDetail");
+        console.log(res.data.trip);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
+  console.log(trips);
 
   return (
     <div className="home-wrapper">
@@ -29,6 +47,7 @@ const Home = () => {
           {trips !== undefined &&
             trips.map((trip) => (
               <TripCard
+                key={trip.id}
                 tripName={trip.name}
                 onClickDetails={() => handleDetailsPage(trip.id)}
               />

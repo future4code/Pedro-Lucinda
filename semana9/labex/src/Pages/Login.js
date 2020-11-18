@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 //styles
 import { H1, H4, P } from "../components/styledComponents/Text";
 import { InputForm } from "../components/styledComponents/Form";
@@ -8,10 +8,13 @@ import "../styles/login.css";
 import { useHistory, Link } from "react-router-dom";
 //services
 import api from "../services/api";
+//context
+import { UserContext } from "../contex/UserContext";
 
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const { userId, setUserId } = useContext(UserContext);
   const history = useHistory();
 
   function onChangeEmail(e) {
@@ -23,12 +26,27 @@ const Login = () => {
   }
 
   function handleLogin() {
-    if (password !== '' && email !== '') {
-      alert("Registered successfully");
-      return history.push("/");
-    } else {
-      alert("Please inset a valid email and password");
-    }
+    const body = {
+      email: email,
+      password: password,
+    };
+
+    api
+      .post("/login", body, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        localStorage.setItem("token", response.data.token);
+        setUserId(response.data.user.id);
+        history.push(`/home/${response.data.user.id}`);
+        console.log(userId);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Please inset a valid email and password or register");
+      });
   }
 
   return (
@@ -42,6 +60,10 @@ const Login = () => {
         <InputForm value={password} onChange={onChangePassword} />
       </div>
       <SendBtn onClick={handleLogin}> Login </SendBtn>
+      <P>
+        Don't have an account yet? Click here to
+        <Link to="/Register"> Register!</Link>
+      </P>
     </div>
   );
 };

@@ -13,7 +13,6 @@ import api from "../services/api";
 //context
 import { TripsContext } from "../contex/TripsContext";
 
-
 const CreateTrip = () => {
   const { trips, setTrips } = useContext(TripsContext);
 
@@ -21,10 +20,28 @@ const CreateTrip = () => {
   const [date, setDate] = useState("");
   const [planet, setPlanet] = useState("");
   const [duration, setDuration] = useState("");
-  const [profession, setProfession] = useState("");
   const [description, setDescription] = useState("");
 
+  function handleCreateTrip() {
+    const body = {
+      name: name,
+      planet: planet,
+      date: date,
+      description: description,
+      durationInDays: duration,
+    };
 
+    api
+      .post("/trips", body, {
+        headers: {
+          auth: localStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        alert("Trip Created!");
+      })
+      .catch((error) => console.log(error));
+  }
 
   return (
     <div className="createTrip-container">
@@ -60,18 +77,13 @@ const CreateTrip = () => {
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         />
-        <H4>Profession:</H4>
-        <InputForm
-          value={profession}
-          onChange={(e) => setProfession(e.target.value)}
-        />
         <H4> Description: </H4>
         <Textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      <SendBtn > Apply </SendBtn>
+      <SendBtn onClick={handleCreateTrip}> Apply </SendBtn>
     </div>
   );
 };

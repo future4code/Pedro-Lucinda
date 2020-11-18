@@ -15,8 +15,8 @@ function Routes() {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/Login" exact component={Login} />
+        <Route path="/home/:id" exact component={Home} />
+        <Route path="/" exact component={Login} />
         <Route path="/Register" exact component={Register} />
         <Route path="/TripDetail" exact component={TripDetail} />
         <Route path="/CreateTrip" exact component={CreateTrip} />

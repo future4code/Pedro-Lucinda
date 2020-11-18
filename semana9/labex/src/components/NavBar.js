@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 //assets
 import logo from "../assets/labexLogo.svg";
 import searchIcon from "../assets/search.svg";
@@ -7,11 +7,15 @@ import "../styles/navBar.css";
 import { Icon } from "./styledComponents/Icons";
 import { H4 } from "./styledComponents/Text";
 import { Link } from "react-router-dom";
+//context
+import { UserContext } from "../contex/UserContext";
 
 const NavBar = () => {
+  const { userId } = useContext(UserContext);
+
   return (
     <div className="navBar-container">
-      <Link to="/">
+      <Link to={`/home/${userId}`}>
         <img id="logo" src={logo} alt="LabeX" />{" "}
       </Link>
 
@@ -26,7 +30,7 @@ const NavBar = () => {
       </div>
 
       <div className="navBar-menu">
-        <Link to="/">
+        <Link to={`/home/${userId}`}>
           <H4> Trips </H4>
         </Link>
 
@@ -34,7 +38,7 @@ const NavBar = () => {
           <H4> Create </H4>
         </Link>
 
-        <Link to="/Login">
+        <Link to="/">
           <H4> Login/Register </H4>
         </Link>
       </div>
