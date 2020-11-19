@@ -38,8 +38,8 @@ const NavBar = () => {
           <H4> Create </H4>
         </Link>
 
-        <Link to="/">
-          <H4> Login/Register </H4>
+        <Link to="/Candidates">
+          <H4> Candidates </H4>
         </Link>
       </div>
     </div>
