@@ -15,10 +15,10 @@ const ErrorPage = () => {
   return (
     <div className="ErrorPage-Wrapper">
       <H1> Ops page not found :/ </H1>
-      <P> Continue on web site by clicking on the button bellow :) </P>
+      <P> Continue on web site by clicking on the button bellow </P>
       <SendBtn onClick={handleGoBackBtn}> Go back </SendBtn>
     </div>
-  );
+  )
 };
 
 export default ErrorPage;

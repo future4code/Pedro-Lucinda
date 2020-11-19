@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 //component
 import TripCard from "../components/TripCard";
-import NavBar from "../components/NavBar"
+import NavBar from "../components/NavBar";
 //styles
 import "../styles/home.css";
 import { H1 } from "../components/styledComponents/Text";
 //context
 import { TripsContext } from "../contex/TripsContext";
 import { TripPageContext } from "../contex/TripPageContext";
+import { UserContext } from "../contex/UserContext";
 //Routes
 import { useHistory } from "react-router-dom";
 //services
@@ -16,6 +17,7 @@ import api from "../services/api";
 const Home = () => {
   const { trips } = useContext(TripsContext);
   const { setTripPage } = useContext(TripPageContext);
+  const { userId } = useContext(UserContext);
   const history = useHistory();
 
   function handleDetailsPage(id) {
@@ -30,10 +32,11 @@ const Home = () => {
       )
       .then((res) => {
         setTripPage(res.data.trip);
-        history.push("/TripDetail");
+        history.push(`/TripDetail`);
         console.log(res.data.trip);
       })
       .catch((err) => {
+        
         console.log(err);
       });
   }

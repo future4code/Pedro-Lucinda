@@ -15,8 +15,8 @@ const CandidateCard = (props) => {
       <P> {props.profession} </P>
       <P> {props.description} </P>
 			<div className="cadidateCard-btns">
-      <AcceptBtn> Accept </AcceptBtn>
-      <IgnoretBtn > Ignore </IgnoretBtn>
+      <AcceptBtn onClick={props.onClickAccept}> Accept </AcceptBtn>
+      <IgnoretBtn onClick={props.onClickIgnore} > Ignore </IgnoretBtn>
 
 			</div>
     </div>

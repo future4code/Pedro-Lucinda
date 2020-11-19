@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useContext } from "react";
 //styles
 import { H1, H4, P } from "../components/styledComponents/Text";
@@ -6,6 +7,8 @@ import "../styles/tripDetail.css";
 //context
 import { TripPageContext } from "../contex/TripPageContext";
 import { ApplyIdContext } from "../contex/ApplyIdContext";
+import { UserContext } from "../contex/UserContext";
+
 //Routes
 import { useHistory } from "react-router-dom";
 //components
@@ -14,11 +17,13 @@ import NavBar from "../components/NavBar";
 const TripDetail = () => {
   const { tripPage } = useContext(TripPageContext);
   const { setApplyId } = useContext(ApplyIdContext);
+  const { userId } = useContext(UserContext);
+
   const history = useHistory();
 
   function handleGoToApply(id) {
     setApplyId(id);
-    return history.push("/Apply");
+    return history.push(`/Apply`);
   }
 
   const random = Math.floor(Math.random() * 30);

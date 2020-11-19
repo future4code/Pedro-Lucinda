@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 //styles
 import { H1, H4, P } from "../components/styledComponents/Text";
 import { InputForm } from "../components/styledComponents/Form";
@@ -10,25 +10,24 @@ import { useHistory, Link } from "react-router-dom";
 import api from "../services/api";
 //context
 import { UserContext } from "../contex/UserContext";
+//hooks
+import { useForm } from "../hooks/useForm";
 
 const Login = () => {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const { userId, setUserId } = useContext(UserContext);
+  const { form, onChange } = useForm({ email: "", password: "" });
+  const { setUserId } = useContext(UserContext);
   const history = useHistory();
 
-  function onChangeEmail(e) {
-    setEmail(e.target.value);
-  }
+  const handleInputChange = (event) => {
+    const { value, name } = event.target;
+    onChange(value, name);
+  };
 
-  function onChangePassword(e) {
-    setPassword(e.target.value);
-  }
-
-  function handleLogin() {
+  function handleLogin(e) {
+    e.preventDefault();
     const body = {
-      email: email,
-      password: password,
+      email: form.email,
+      password: form.password,
     };
 
     api
@@ -40,8 +39,7 @@ const Login = () => {
       .then((response) => {
         localStorage.setItem("token", response.data.token);
         setUserId(response.data.user.id);
-        history.push(`/home/${response.data.user.id}`);
-        console.log(userId);
+        history.push(`/`);
       })
       .catch((error) => {
         console.log(error);
@@ -53,13 +51,28 @@ const Login = () => {
     <div className="login-container">
       <H1>Login</H1>
       <P>Welcome Back!</P>
-      <div className="login-form">
-        <H4> Email: </H4>
-        <InputForm value={email} onChange={onChangeEmail} />
-        <H4> Password: </H4>
-        <InputForm value={password} onChange={onChangePassword} />
-      </div>
-      <SendBtn onClick={handleLogin}> Login </SendBtn>
+      <form onSubmit={handleLogin}>
+        <div className="login-form">
+          <H4> Email: </H4>
+          <InputForm
+            value={form.email}
+            onChange={handleInputChange}
+            name={"email"}
+            type={"email"}
+            required
+          />
+          <H4> Password: </H4>
+          <InputForm
+            value={form.password}
+            onChange={handleInputChange}
+            name={"password"}
+            type={"password"}
+            pattern={".{6,}"}
+            required
+          />
+        </div>
+        <SendBtn> Login </SendBtn>
+      </form>
       <P>
         Don't have an account yet? Click here to
         <Link to="/Register"> Register!</Link>

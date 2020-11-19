@@ -11,19 +11,19 @@ import { SendBtn } from "../components/styledComponents/Buttons";
 import "../styles/apply.css";
 //services
 import api from "../services/api";
-//context
-import { TripsContext } from "../contex/TripsContext";
 //components
 import NavBar from "../components/NavBar";
+//routes
+import { useHistory } from "react-router-dom";
 
 const CreateTrip = () => {
-  const { trips, setTrips } = useContext(TripsContext);
-
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [planet, setPlanet] = useState("");
   const [duration, setDuration] = useState("");
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState(""); 
+
+  const history = useHistory();
 
   function handleCreateTrip() {
     const body = {
@@ -42,6 +42,7 @@ const CreateTrip = () => {
       })
       .then((response) => {
         alert("Trip Created!");
+        history.push("/");
       })
       .catch((error) => console.log(error));
   }
