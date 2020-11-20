@@ -18,7 +18,7 @@ const ErrorPage = () => {
       <P> Continue on web site by clicking on the button bellow </P>
       <SendBtn onClick={handleGoBackBtn}> Go back </SendBtn>
     </div>
-  )
+  );
 };
 
 export default ErrorPage;

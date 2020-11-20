@@ -35,7 +35,6 @@ const Apply = () => {
 
   const history = useHistory();
   const candidateId = Math.floor(Math.random() * 100000) + 5;
-  
 
   const handleInputChange = (event) => {
     const { value, name } = event.target;
@@ -57,7 +56,6 @@ const Apply = () => {
     api
       .post(`/trips/${candidateId}/apply`, body)
       .then((response) => {
-        console.log("response", response)
         const newCandidate = {
           id: candidateId,
           name: form.name,
@@ -66,13 +64,10 @@ const Apply = () => {
           profession: form.profession,
           country: form.country,
         };
-
         const newArr = [...candidatesArr];
         newArr.push(newCandidate);
-
         setCandidates(newArr);
         alert(response.data.message);
-
         history.push("/");
       })
       .catch((error) => {
@@ -117,7 +112,7 @@ const Apply = () => {
                 value={form.selectTrip}
                 onChange={handleInputChange}
                 required
-                name={"selectedTrip"}
+                name={"selectTrip"}
               >
                 {trips.map((trip) => (
                   <option value={trip.name} key={trip.id}>

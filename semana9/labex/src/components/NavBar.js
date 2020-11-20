@@ -32,7 +32,10 @@ const NavBar = () => {
           onChange={(e) => setSearchInp(e.target.value)}
           placeholder="Search..."
         />
-        <Icon src={searchIcon} alt="Search" onClick={() => history.push("/")} />
+        <Icon src={searchIcon} alt="Search" onClick={() => {
+          setSearchInp('Search...')
+          history.push("/")}
+          } />
       </div>
 
       <div className="navBar-menu">

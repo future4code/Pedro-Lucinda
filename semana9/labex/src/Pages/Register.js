@@ -17,7 +17,6 @@ const Register = () => {
     password: "",
   });
 
-
   const history = useHistory();
 
   const handleInputChange = (event) => {

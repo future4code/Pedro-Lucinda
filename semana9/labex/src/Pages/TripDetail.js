@@ -7,8 +7,6 @@ import "../styles/tripDetail.css";
 //context
 import { TripPageContext } from "../contex/TripPageContext";
 import { ApplyIdContext } from "../contex/ApplyIdContext";
-import { UserContext } from "../contex/UserContext";
-
 //Routes
 import { useHistory } from "react-router-dom";
 //components
@@ -17,7 +15,6 @@ import NavBar from "../components/NavBar";
 const TripDetail = () => {
   const { tripPage } = useContext(TripPageContext);
   const { setApplyId } = useContext(ApplyIdContext);
-  const { userId } = useContext(UserContext);
 
   const history = useHistory();
 
@@ -26,15 +23,13 @@ const TripDetail = () => {
     return history.push(`/Apply`);
   }
 
-  const random = Math.floor(Math.random() * 30);
-
   return (
     <>
       <NavBar />
       <div className="tripDetail-container">
         <div className="tripDetail-img">
           <img
-            src={`https://source.unsplash.com/492x492/?space,rocket${random}`}
+            src={`https://source.unsplash.com/492x492/?${tripPage.planet},space`}
             alt="Trip Image"
           />
         </div>

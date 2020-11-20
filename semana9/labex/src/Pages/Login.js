@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import { H1, H4, P } from "../components/styledComponents/Text";
 import { InputForm } from "../components/styledComponents/Form";
 import { SendBtn } from "../components/styledComponents/Buttons";
+//assets
+import logo from "../assets/labexLogo.svg";
 import "../styles/login.css";
 //routes
 import { useHistory, Link } from "react-router-dom";
@@ -48,36 +50,39 @@ const Login = () => {
   }
 
   return (
-    <div className="login-container">
-      <H1>Login</H1>
-      <P>Welcome Back!</P>
-      <form onSubmit={handleLogin}>
-        <div className="login-form">
-          <H4> Email: </H4>
-          <InputForm
-            value={form.email}
-            onChange={handleInputChange}
-            name={"email"}
-            type={"email"}
-            required
-          />
-          <H4> Password: </H4>
-          <InputForm
-            value={form.password}
-            onChange={handleInputChange}
-            name={"password"}
-            type={"password"}
-            pattern={".{6,}"}
-            required
-          />
-        </div>
-        <SendBtn> Login </SendBtn>
-      </form>
-      <P>
-        Don't have an account yet? Click here to
-        <Link to="/Register"> Register!</Link>
-      </P>
-    </div>
+    <>
+      <img id="logoLogin" src={logo} alt="Labex" />
+      <div className="login-container">
+        <H1>Login</H1>
+        <P>Welcome Back!</P>
+        <form onSubmit={handleLogin}>
+          <div className="login-form">
+            <H4> Email: </H4>
+            <InputForm
+              value={form.email}
+              onChange={handleInputChange}
+              name={"email"}
+              type={"email"}
+              required
+            />
+            <H4> Password: </H4>
+            <InputForm
+              value={form.password}
+              onChange={handleInputChange}
+              name={"password"}
+              type={"password"}
+              pattern={".{6,}"}
+              required
+            />
+          </div>
+          <SendBtn> Login </SendBtn>
+        </form>
+        <P>
+          Don't have an account yet? Click here to
+          <Link to="/Register"> Register!</Link>
+        </P>
+      </div>
+    </>
   );
 };
 

@@ -8,7 +8,6 @@ import { H1 } from "../components/styledComponents/Text";
 //context
 import { TripsContext } from "../contex/TripsContext";
 import { TripPageContext } from "../contex/TripPageContext";
-import { UserContext } from "../contex/UserContext";
 //Routes
 import { useHistory } from "react-router-dom";
 //services
@@ -17,31 +16,23 @@ import api from "../services/api";
 const Home = () => {
   const { trips } = useContext(TripsContext);
   const { setTripPage } = useContext(TripPageContext);
-  const { userId } = useContext(UserContext);
+
   const history = useHistory();
 
-  function handleDetailsPage(id) {
+  function handleDetailsPage(trip) {
+    setTripPage(trip);
     api
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/caio-dumont/trip/3Ga6Stvj6B687TNgFK72",
-        {
-          headers: {
-            auth: localStorage.getItem("token"),
-          },
-        }
-      )
-      .then((res) => {
-        setTripPage(res.data.trip);
-        history.push(`/TripDetail`);
-        console.log(res.data.trip);
+      .get(`/trip/${trip.id}`, {
+        headers: {
+          auth: localStorage.getItem("token"),
+        },
       })
-      .catch((err) => {
-        
-        console.log(err);
-      });
+      .then((response) => {
+        setTripPage(response.data.trip);
+        history.push("/TripDetail");
+      })
+      .catch((error) => console.log(error));
   }
-
-  console.log(trips);
 
   return (
     <>
@@ -55,7 +46,7 @@ const Home = () => {
                 <TripCard
                   key={trip.id}
                   tripName={trip.name}
-                  onClickDetails={() => handleDetailsPage(trip.id)}
+                  onClickDetails={() => handleDetailsPage(trip)}
                 />
               ))}
           </div>
