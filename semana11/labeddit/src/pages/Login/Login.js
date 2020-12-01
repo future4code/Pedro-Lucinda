@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import api from "../../services/api";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import {
 	Input,
@@ -11,21 +12,57 @@ import {
 	SendBtn,
 	A,
 } from "../../components/Form/Form";
+import { useForm } from "../../hooks/useForm";
 
 const Login = () => {
+	const [form, onChangeInput] = useForm({
+		email: "",
+		password: "",
+	});
+
+	const history = useHistory();
+
+	function handleLogin(e) {
+		e.preventDefault();
+
+		const body = {
+			email: form.email,
+			password: form.password,
+		};
+
+		api
+			.post(`/login`, body)
+			.then((response) => {
+				localStorage.setItem("token", response.data.token);
+				history.push("/timeline");
+			})
+			.catch((error) => {
+				alert("Please verify our info and try again.");
+				console.log(error);
+			});
+	}
 	return (
 		<FormWrapper>
-			<FormContainer>
+			<FormContainer onSubmit={handleLogin}>
 				<Img src={Logo} alt="Logo" />
 				<Title> Login </Title>
 				<H4> Email </H4>
-				<Input value onChange name type />
+				<Input
+					label={"E-mail"}
+					name={"email"}
+					value={form["email"]}
+					onChange={onChangeInput}
+				/>
 				<H4> Password </H4>
-				<Input value onChange name type />
+				<Input
+					label={"Password"}
+					type={"password"}
+					onChange={onChangeInput}
+					value={form["password"]}
+					name={"password"}
+				/>
 				<SendBtn> Login </SendBtn>
-				<Link path="/register">
-					<A> Or register </A>
-				</Link>
+				<A onClick={() => history.push("/register")}>Or Register</A>
 			</FormContainer>
 		</FormWrapper>
 	);

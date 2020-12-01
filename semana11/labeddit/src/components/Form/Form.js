@@ -92,7 +92,7 @@ export const Img = styled.img`
 	}
 `;
 
-export const A = styled.a`
+export const A = styled.p`
 	text-decoration: none;
 	color: var(--primary);
 	font-size: 0.7rem;
