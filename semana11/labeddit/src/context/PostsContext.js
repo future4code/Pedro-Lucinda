@@ -3,24 +3,28 @@ import api from "../services/api";
 
 export const PostsContext = createContext();
 
-export const PostsContextProvider = () => {
+export const PostsContextProvider = (props) => {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
 		api
 			.get("/posts", {
 				headers: {
-					Authorization: localStorage.getItem("Token"),
+					Authorization: localStorage.getItem("token"),
 				},
 			})
 			.then((response) => {
-				setPosts(response.posts);
+				setPosts(response.data.posts);
+				console.log(posts);
 			})
 			.catch((error) => {
 				console.log(error);
-				alert(error.message);
 			});
 	}, []);
 
-	return;
+	return (
+		<PostsContext.Provider value={{ posts, setPosts }}>
+			{props.children}
+		</PostsContext.Provider>
+	);
 };

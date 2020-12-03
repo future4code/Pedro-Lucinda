@@ -1,28 +1,26 @@
 import React from "react";
 import { BottomBar, PostContainer, PostContent, UserName } from "./style";
+import Up from "../Icons/Up";
+import Down from "../Icons/Down";
 
 const Post = (props) => {
 	return (
 		<PostContainer>
 			<UserName>
-				<p> User Name {props.userName} </p>
+				<p> {props.userName} </p>
 			</UserName>
 			<PostContent>
-				<p>udsaudhsah dsauihduhsa sadhuhdsa  hdsau
-
-				</p>
+				<h4> {props.title} </h4>
+				<p>{props.content}</p>
 			</PostContent>
 			<BottomBar>
 				<div>
-					<img alt="Up" />
-					<p> 0 {props.likeCounter}</p>
-					<img alt="Down" />
+					<Up onClick={props.onClickUp} />
+					<p>{props.likeCounter}</p>
+					<Down onClick={props.onClickDown} />
 				</div>
 				<div>
-					<p>
-						0 Comments
-						{props.comentsNumber}
-					</p>
+					<p>{props.comentsNumber} Comments</p>
 				</div>
 			</BottomBar>
 		</PostContainer>

@@ -34,6 +34,7 @@ const Login = () => {
 			.post(`/login`, body)
 			.then((response) => {
 				localStorage.setItem("token", response.data.token);
+				
 				history.push("/timeline");
 			})
 			.catch((error) => {

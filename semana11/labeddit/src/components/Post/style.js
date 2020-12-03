@@ -50,16 +50,25 @@ export const PostContent = styled.div`
 	padding: 20px;
 
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	overflow: scroll;
+
+	text-align: center;
+
+	h4 {
+		height: 30%;
+	}
 
 	p {
 		color: var(--primary);
 		font-size: 1.2rem;
 		font-weight: 500;
-
+		height: 70%;
 		text-align: center;
+
+		margin-top: 20px;
 	}
 `;
 

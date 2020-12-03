@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { SendBtn } from "../Form/Form";
+import { Container, TextArea } from "./style";
 
-const CreatePost = () => {
+const CreatePost = (props) => {
 	return (
-		<div>
-			
-		</div>
-	)
-}
+		<Container>
+			<TextArea name={props.name} value={props.value} required />
+			<SendBtn onClick={props.onClick}> Post </SendBtn>
+		</Container>
+	);
+};
 
-export default CreatePost
+export default CreatePost;

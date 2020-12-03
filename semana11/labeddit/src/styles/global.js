@@ -23,7 +23,7 @@ export default createGlobalStyle`
 		--bg: #010101;
 		--red: #F23005;
   }
-  button, img {
+  button, img, svg {
 		cursor: pointer;
 		outline: none;
   }
