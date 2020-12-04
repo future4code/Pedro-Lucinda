@@ -1,11 +1,21 @@
 import React from "react";
 import { SendBtn } from "../Form/Form";
-import { Container, TextArea } from "./style";
+import { Container, TextArea, Title } from "./style";
 
 const CreatePost = (props) => {
 	return (
 		<Container>
-			<TextArea name={props.name} value={props.value} required />
+			<Title
+				placeHolder="Title"
+				value={props.titleValue}
+				onChange={props.onChangeTitle}
+			/>
+			<TextArea
+				placeHolder="Post"
+				onChange={props.onChangeBody}
+				value={props.value}
+				required
+			/>
 			<SendBtn onClick={props.onClick}> Post </SendBtn>
 		</Container>
 	);

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const PostContainer = styled.div`
-	width: 500px;
-	max-height: 500px;
+	width: 350px;
+	max-height: 400px;
 	min-height: 300px;
 	max-height: 500px;
 
@@ -44,7 +44,7 @@ export const UserName = styled.div`
 
 export const PostContent = styled.div`
 	width: 100%;
-	height: 300px;
+	height: 250px;
 	max-height: 400px;
 
 	padding: 20px;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	width: 500px;
-	max-height: 500px;
+	width: 350px;
+
 	min-height: 300px;
-	max-height: 500px;
+	max-height: 450px;
 
 	margin: 50px auto;
 
@@ -36,4 +36,20 @@ export const TextArea = styled.textarea`
 
 	color: var(--primary);
 	font-size: 1rem;
+`;
+
+export const Title = styled.input`
+	width: 100%;
+	height: 50px;
+	background: var(--lighter-bg);
+	padding: 20px;
+
+	color: var(--primary);
+	font-size: 1rem;
+
+	margin-bottom: 5px;
+
+	outline: none;
+	border: var(--bg);
+	border-radius: 10px;
 `;
