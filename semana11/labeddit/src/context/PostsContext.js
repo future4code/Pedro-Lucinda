@@ -15,7 +15,6 @@ export const PostsContextProvider = (props) => {
 			})
 			.then((response) => {
 				setPosts(response.data.posts);
-				console.log(posts);
 			})
 			.catch((error) => {
 				console.log(error);

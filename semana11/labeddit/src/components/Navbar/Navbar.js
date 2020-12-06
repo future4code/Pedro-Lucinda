@@ -7,7 +7,11 @@ const Navbar = () => {
 	const history = useHistory();
 	return (
 		<WrapperNav>
-			<LogoImg src={Logo} alt="Logo" />
+			<LogoImg
+				src={Logo}
+				alt="Logo"
+				onClick={() => history.push("/timeline")}
+			/>
 			<Search placeholder="Search..." />
 			<Links onClick={() => history.push("/")}> Login/Register </Links>
 		</WrapperNav>

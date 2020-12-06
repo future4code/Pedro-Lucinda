@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 //components
 import Navbar from "../../components/Navbar/Navbar";
 import Post from "../../components/Post/Post";
@@ -7,14 +7,14 @@ import CreatePost from "../../components/CreatePost/CreatePost";
 import { PostsContext } from "../../context/PostsContext";
 //api
 import api from "../../services/api";
+import { useHistory } from "react-router-dom";
 
 const Timeline = () => {
 	const { posts, setPosts } = useContext(PostsContext);
-
 	const [title, setTitle] = useState("");
 	const [bodyPost, setBody] = useState("");
-	const [comments, setComments] = useState([]);
-	const [displayComment, setDisplayComment] = useState(false);
+	const [count, setCount] = useState(0);
+	const history = useHistory();
 
 	function onChangeTitle(e) {
 		setTitle(e.target.value);
@@ -44,35 +44,24 @@ const Timeline = () => {
 
 		getPosts();
 	}
-
 	function handleSeeComments(id) {
-		api
-			.get(`/posts/${id}`, {
-				headers: {
-					Authorization: localStorage.getItem("token"),
-				},
-			})
-			.then((response) => {
-				setComments(response.post.comments);
-				setDisplayComment(!displayComment);
-				console.log(comments);
-			})
-			.catch((error) => console.log(error));
+		history.push(`/posts/${id}`);
 	}
 
 	function handleVoteUp(id) {
-		console.log(id);
 		const body = {
 			direction: 1,
 		};
 
+		setCount(count + 1);
+
 		api
-			.put(`/${id}/vote`, body, {
+			.put(`/posts/${id}/vote`, body, {
 				headers: {
 					Authorization: localStorage.getItem("token"),
 				},
 			})
-			.then((response) => alert(response))
+			.then((response) => alert("Voted up"))
 			.catch((error) => console.log(error));
 
 		getPosts();
@@ -81,13 +70,15 @@ const Timeline = () => {
 		const body = {
 			direction: -1,
 		};
+
+		setCount(count - 1);
 		api
-			.put(`/${id}/vote`, body, {
+			.put(`/posts/${id}/vote`, body, {
 				headers: {
 					Authorization: localStorage.getItem("token"),
 				},
 			})
-			.then((response) => console.log(response))
+			.then((response) => alert("Voted Down"))
 			.catch((error) => console.log(error));
 		getPosts();
 	}
@@ -108,7 +99,7 @@ const Timeline = () => {
 	}
 
 	return (
-		<div>
+		<>
 			<Navbar />
 			<CreatePost
 				titleValue={title}
@@ -117,6 +108,12 @@ const Timeline = () => {
 				value={bodyPost}
 				onClick={handleCreatePost}
 			/>
+			{posts.length < 1 && (
+				<h3 style={{ color: "white", fontSize: "20px"}}>
+					Loading...
+				</h3>
+			)}
+
 			{posts &&
 				posts.map((post) => (
 					<Post
@@ -124,16 +121,14 @@ const Timeline = () => {
 						userName={post.username}
 						title={post.title}
 						content={post.text}
-						likeCounter={post.votesCount}
+						likeCounter={count}
 						comentsNumber={post.commentsCount}
 						onClickUp={() => handleVoteUp(post.id)}
 						onClickDown={() => handleVoteDown(post.id)}
 						onClickComments={() => handleSeeComments(post.id)}
-						comments={comments && comments}
-						displayComment={displayComment}
 					/>
 				))}
-		</div>
+		</>
 	);
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { BottomBar, PostContainer, PostContent, UserName } from "./style";
 import Up from "../Icons/Up";
 import Down from "../Icons/Down";
-import Comment from "../Comment/Comment";
+
 
 const Post = (props) => {
 	return (
@@ -24,15 +24,6 @@ const Post = (props) => {
 					<p onClick={props.onClickComments}>{props.comentsNumber} Comments</p>
 				</div>
 			</BottomBar>
-			{props.comments &&
-				props.comments.map((comment) => (
-					<Comment
-						display={props.displayComment}
-						userName={comment.usename}
-						text={comment.text}
-						votesCount={comment.votesCount}
-					/>
-				))}
 		</PostContainer>
 	);
 };
