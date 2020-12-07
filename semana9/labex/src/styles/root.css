@@ -1,0 +1,10 @@
+:root {
+	font-family: "Roboto", sans-serif;
+	color: #3A3A3A;
+	font-size: 10px;
+	--dark-grey: #3A3A3A;
+	--med-grey: #C9C9D4;
+	--light-grey: #F2F2FB;
+	--input-color: #E4E4ED;
+	--green: #04D361;
+}
