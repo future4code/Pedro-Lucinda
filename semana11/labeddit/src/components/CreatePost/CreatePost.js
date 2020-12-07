@@ -6,12 +6,12 @@ const CreatePost = (props) => {
 	return (
 		<Container>
 			<Title
-				placeHolder="Title"
+				placeholder="Post`s title"
 				value={props.titleValue}
 				onChange={props.onChangeTitle}
 			/>
 			<TextArea
-				placeHolder="Post"
+				placeholder="Write your post here..."
 				onChange={props.onChangeBody}
 				value={props.value}
 				required

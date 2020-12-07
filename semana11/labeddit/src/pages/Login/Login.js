@@ -1,7 +1,7 @@
 import React from "react";
-import api from "../../services/api";
-import { Link, useHistory } from "react-router-dom";
-import Logo from "../../assets/logo.png";
+//routes
+import { useHistory } from "react-router-dom";
+//styles
 import {
 	Input,
 	H4,
@@ -12,6 +12,9 @@ import {
 	SendBtn,
 	A,
 } from "../../components/Form/Form";
+//services
+import api from "../../services/api";
+//hooks
 import { useForm } from "../../hooks/useForm";
 
 const Login = () => {
@@ -34,7 +37,6 @@ const Login = () => {
 			.post(`/login`, body)
 			.then((response) => {
 				localStorage.setItem("token", response.data.token);
-				
 				history.push("/timeline");
 			})
 			.catch((error) => {
@@ -45,7 +47,10 @@ const Login = () => {
 	return (
 		<FormWrapper>
 			<FormContainer onSubmit={handleLogin}>
-				<Img src={Logo} alt="Logo" />
+				<Img
+					src="https://logodownload.org/wp-content/uploads/2018/02/reddit-logo-16.png"
+					alt="Logo"
+				/>
 				<Title> Login </Title>
 				<H4> Email </H4>
 				<Input

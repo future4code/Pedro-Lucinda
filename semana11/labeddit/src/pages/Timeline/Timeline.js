@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 //components
 import Navbar from "../../components/Navbar/Navbar";
 import Post from "../../components/Post/Post";
@@ -8,6 +8,7 @@ import { PostsContext } from "../../context/PostsContext";
 //api
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 
 const Timeline = () => {
 	const { posts, setPosts } = useContext(PostsContext);
@@ -36,9 +37,9 @@ const Timeline = () => {
 				},
 			})
 			.then((response) => {
-				alert("Posted!");
 				setTitle("");
 				setBody("");
+				alert("Posted!");
 			})
 			.catch((error) => console.log(error));
 
@@ -101,18 +102,15 @@ const Timeline = () => {
 	return (
 		<>
 			<Navbar />
-			<CreatePost
+			{posts.length > 0 && (
+				<CreatePost
 				titleValue={title}
 				onChangeTitle={onChangeTitle}
 				onChangeBody={onChangeBody}
 				value={bodyPost}
 				onClick={handleCreatePost}
-			/>
-			{posts.length < 1 && (
-				<h3 style={{ color: "white", fontSize: "20px"}}>
-					Loading...
-				</h3>
-			)}
+			/>)}
+			{posts.length < 1 && <Loading />}
 
 			{posts &&
 				posts.map((post) => (

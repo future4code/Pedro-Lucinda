@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 	width: 350px;
-	min-height: 300px;
+	min-height: 200px;
 	max-height: 400px;
 
 	overflow: auto;
@@ -15,6 +15,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 
 	&:hover {
 		border: 1px solid var(--primary);

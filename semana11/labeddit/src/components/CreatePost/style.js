@@ -50,6 +50,5 @@ export const Title = styled.input`
 	margin-bottom: 5px;
 
 	outline: none;
-	border: var(--bg);
-	border-radius: 10px;
+	border: 1px solid var(--off-text);
 `;

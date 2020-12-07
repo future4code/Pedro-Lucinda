@@ -1,5 +1,5 @@
 import React from "react";
-import api from "../../services/api";
+//styles
 import {
 	FormContainer,
 	FormWrapper,
@@ -10,9 +10,12 @@ import {
 	H4,
 	A,
 } from "../../components/Form/Form";
-import Logo from "../../assets/logo.png";
+//hooks
 import { useForm } from "../../hooks/useForm";
+//routes
 import { useHistory } from "react-router-dom";
+//services
+import api from "../../services/api";
 
 const Register = () => {
 	const [form, onChangeInput] = useForm({
@@ -48,7 +51,10 @@ const Register = () => {
 	return (
 		<FormWrapper>
 			<FormContainer onSubmit={handleRegister}>
-				<Img src={Logo} alt="Logo" />
+				<Img
+					src="https://logodownload.org/wp-content/uploads/2018/02/reddit-logo-16.png"
+					alt="Logo"
+				/>
 				<Title> Register </Title>
 
 				<H4> Name </H4>

@@ -6,12 +6,12 @@ export const Input = styled.input`
 	border-radius: 10px;
 
 	color: var(--primary);
-	font-size: 1rem;
+	font-size: 0.7rem;
 
 	padding: 10px;
 
-	min-width: 200px;
-	max-width: 300px;
+	min-width: 300px;
+	max-width: 350px;
 
 	background: var(--bg);
 `;
@@ -42,7 +42,7 @@ export const SendBtn = styled.button`
 
 export const FormContainer = styled.form`
 	max-width: 600px;
-	min-width: 500px;
+	min-width: 350px;
 
 	min-height: 500px;
 	max-height: 600px;
@@ -84,7 +84,7 @@ export const Title = styled.h1`
 `;
 
 export const Img = styled.img`
-	width: 150px;
+	width: 50px;
 	height: 50px;
 
 	&:hover {

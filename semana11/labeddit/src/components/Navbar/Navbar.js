@@ -13,7 +13,7 @@ const Navbar = () => {
 				onClick={() => history.push("/timeline")}
 			/>
 			<Search placeholder="Search..." />
-			<Links onClick={() => history.push("/")}> Login/Register </Links>
+			<Links onClick={() => history.push("/")}> Login </Links>
 		</WrapperNav>
 	);
 };
