@@ -78,21 +78,21 @@ const Posts = () => {
 			{comments.length < 1 && <Loading />}
 
 			{comments.comments?.length > 0 && (
-				<CreateComment
-					onChangeComment={(e) => setComment(e.target.value)}
-					value={comment}
-					required
-					onClick={handleCreateComment}
-				/>
-			)}
-
-			{comments.comments?.length > 0 && (
 				<Post
 					userName={comments.username}
 					title={comments.title}
 					content={comments.text}
 					likeCounter={comments.votesCount}
 					commentsNumber={comments.commentsCount}
+				/>
+			)}
+
+			{comments.comments?.length > 0 && (
+				<CreateComment
+					onChangeComment={(e) => setComment(e.target.value)}
+					value={comment}
+					required
+					onClick={handleCreateComment}
 				/>
 			)}
 
@@ -109,7 +109,7 @@ const Posts = () => {
 							key={comment.id}
 							userName={comment.username}
 							text={comment.text}
-							votesCount={count}
+							votesCount={comment.votesCount + count}
 							onClickUp={() => handleVoteUp(comment.id)}
 							onClickDown={() => handleVoteDown(comment.id)}
 						/>

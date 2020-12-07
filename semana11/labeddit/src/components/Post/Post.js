@@ -1,5 +1,5 @@
 import React from "react";
-import { BottomBar, PostContainer, PostContent, UserName } from "./style";
+import { BottomBar, Comment, PostContainer, PostContent, UserName } from "./style";
 import Up from "../Icons/Up";
 import Down from "../Icons/Down";
 
@@ -21,7 +21,7 @@ const Post = (props) => {
 					<Down onClickDown={props.onClickDown} />
 				</div>
 				<div>
-					<p onClick={props.onClickComments}>{props.comentsNumber} Comments</p>
+					<Comment onClick={props.onClickComments}>{props.comentsNumber} Comments</Comment>
 				</div>
 			</BottomBar>
 		</PostContainer>

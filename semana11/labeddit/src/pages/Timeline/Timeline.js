@@ -64,8 +64,6 @@ const Timeline = () => {
 			})
 			.then((response) => alert("Voted up"))
 			.catch((error) => console.log(error));
-
-		getPosts();
 	}
 	function handleVoteDown(id) {
 		const body = {
@@ -104,12 +102,13 @@ const Timeline = () => {
 			<Navbar />
 			{posts.length > 0 && (
 				<CreatePost
-				titleValue={title}
-				onChangeTitle={onChangeTitle}
-				onChangeBody={onChangeBody}
-				value={bodyPost}
-				onClick={handleCreatePost}
-			/>)}
+					titleValue={title}
+					onChangeTitle={onChangeTitle}
+					onChangeBody={onChangeBody}
+					value={bodyPost}
+					onClick={handleCreatePost}
+				/>
+			)}
 			{posts.length < 1 && <Loading />}
 
 			{posts &&
@@ -119,7 +118,7 @@ const Timeline = () => {
 						userName={post.username}
 						title={post.title}
 						content={post.text}
-						likeCounter={count}
+						likeCounter={post.votesCount + count}
 						comentsNumber={post.commentsCount}
 						onClickUp={() => handleVoteUp(post.id)}
 						onClickDown={() => handleVoteDown(post.id)}

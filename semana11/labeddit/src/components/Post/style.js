@@ -109,3 +109,9 @@ export const Comments = styled.div`
 	width: 100%;
 	height: 50px;
 `;
+
+export const Comment = styled.p`
+	&:hover {
+		cursor: pointer;
+	}
+`;

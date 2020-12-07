@@ -68,6 +68,7 @@ const Register = () => {
 
 				<H4> Email </H4>
 				<Input
+					type={"email"}
 					label={"E-mail"}
 					name={"email"}
 					value={form["email"]}
