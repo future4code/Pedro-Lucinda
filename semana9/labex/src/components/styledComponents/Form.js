@@ -21,9 +21,8 @@ export const InputForm = styled.input`
   }
 `;
 
-
 export const ShortInp = styled.input`
- width: 130px;
+  width: 130px;
   height: 50px;
   padding: 0 20px;
   margin-bottom: 20px;
@@ -41,12 +40,10 @@ export const ShortInp = styled.input`
     transform: scale(0.995, 0.995);
     transition: ease-in-out 0.4s;
   }
-
 `;
 
-
 export const Select = styled.select`
-width: 300px;
+  width: 300px;
   height: 50px;
   padding: 0 20px;
   margin-bottom: 20px;
@@ -64,15 +61,15 @@ width: 300px;
     transform: scale(0.995, 0.995);
     transition: ease-in-out 0.4s;
   }
-
 `;
 
 export const Textarea = styled.textarea`
-width: 450px;
+  width: 450px;
   height: 200px;
-  padding:20px;
+  padding: 20px;
   margin-bottom: 20px;
 
+  font-family: "Roboto", sans-serif;
   color: var(--dark-grey);
   font-size: 1.6rem;
 
@@ -86,5 +83,4 @@ width: 450px;
     transform: scale(0.995, 0.995);
     transition: ease-in-out 0.4s;
   }
-
-`
+`;

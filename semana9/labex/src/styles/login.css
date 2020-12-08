@@ -9,3 +9,9 @@
 .login-container .login-form {
 	margin-top: 54px;
 }
+
+#logoLogin{
+	width: 149px;
+	height: 39px;
+	margin: 54px 0 30px 5px;
+}

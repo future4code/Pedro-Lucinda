@@ -6,8 +6,6 @@ export const TripsContext = createContext();
 export default function TripsContextProvider(props) {
   const [trips, setTrips] = useState([]);
 
-  console.log(trips);
-
   useEffect(() => {
     api
       .get("/trips")

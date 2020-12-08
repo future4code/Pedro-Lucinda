@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 //styles
 import { H1, H4, P } from "../components/styledComponents/Text";
 import {
@@ -13,70 +13,143 @@ import "../styles/apply.css";
 import api from "../services/api";
 //context
 import { TripsContext } from "../contex/TripsContext";
+import { CadidatesContext } from "../contex/CadidatesContext";
+//hooks
+import { useForm } from "../hooks/useForm";
+//components
+import NavBar from "../components/NavBar";
+//router
+import { useHistory } from "react-router-dom";
 
 const Apply = () => {
   const { trips } = useContext(TripsContext);
+  const { candidatesArr, setCandidates } = useContext(CadidatesContext);
+  const { form, onChange } = useForm({
+    name: "",
+    country: "",
+    age: "",
+    profession: "",
+    description: "",
+    selectTrip: "",
+  });
 
-  const [name, setName] = useState("");
-  const [country, setCountry] = useState("");
-  const [age, setAge] = useState("");
-  const [profession, setProfession] = useState("");
-  const [description, setDescription] = useState("");
-  const [selectTrip, setSelectTrip] = useState("");
+  const history = useHistory();
+  const candidateId = Math.floor(Math.random() * 100000) + 5;
 
-  function handleApply() {
-    //falta id
+  const handleInputChange = (event) => {
+    const { value, name } = event.target;
+
+    onChange(value, name);
+  };
+
+  function handleApply(e) {
+    e.preventDefault();
+
+    const body = {
+      name: form.name,
+      age: form.age,
+      applicationText: form.description,
+      profession: form.profession,
+      country: form.country,
+    };
+
     api
-      .post(`/trips/apply`)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+      .post(`/trips/${candidateId}/apply`, body)
+      .then((response) => {
+        const newCandidate = {
+          id: candidateId,
+          name: form.name,
+          age: form.age,
+          description: form.description,
+          profession: form.profession,
+          country: form.country,
+        };
+        const newArr = [...candidatesArr];
+        newArr.push(newCandidate);
+        setCandidates(newArr);
+        alert(response.data.message);
+        history.push("/");
+      })
+      .catch((error) => {
+        alert("Please verify our info and try again.");
+        console.log(error);
+      });
   }
 
   return (
-    <div className="apply-container">
-      <H1> Application </H1>
-      <P> Enter your info to apply for this trip! </P>
+    <>
+      <NavBar />
+      <div className="apply-container">
+        <H1> Application </H1>
+        <P> Enter your info to apply for this trip! </P>
 
-      <div className="apply-form">
-        <H4> Name: </H4>
-        <InputForm value={name} onChange={(e) => setName(e.target.value)} />
+        <form className="apply-form" onSubmit={handleApply}>
+          <H4> Name: </H4>
+          <InputForm
+            value={form.name}
+            onChange={handleInputChange}
+            name={"name"}
+            type={"text"}
+            pattern={"[A-Za-z]{3,}"}
+            required
+          />
 
-        <div className="apply-formDiv">
-          <div>
-            <H4>Age:</H4>
-            <ShortInp value={age} onChange={(e) => setAge(e.target.value)} />
+          <div className="apply-formDiv">
+            <div>
+              <H4>Age:</H4>
+              <ShortInp
+                value={form.age}
+                onChange={handleInputChange}
+                name={"age"}
+                type={"number"}
+                min="18"
+                required
+              />
+            </div>
+            <div>
+              <H4>Trip:</H4>
+              <Select
+                value={form.selectTrip}
+                onChange={handleInputChange}
+                required
+                name={"selectTrip"}
+              >
+                {trips.map((trip) => (
+                  <option value={trip.name} key={trip.id}>
+                    {trip.name}
+                  </option>
+                ))}
+              </Select>
+            </div>
           </div>
-          <div>
-            <H4>Trip:</H4>
-            <Select
-              value={selectTrip}
-              onChange={(e) => setSelectTrip(e.target.value)}
-            >
-              {trips.map((trip) => (
-                <option value={trip.name}>{trip.name}</option>
-              ))}
-            </Select>
-          </div>
-        </div>
 
-        <H4>Country:</H4>
-        <InputForm
-          value={country}
-          onChange={(e) => setCountry(e.target.value)}
-        />
-        <H4>Profession:</H4>
-        <InputForm
-          value={profession}
-          onChange={(e) => setProfession(e.target.value)}
-        />
-        <H4> Why should you go on this trip? </H4>
-        <Textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+          <H4>Country:</H4>
+          <InputForm
+            value={form.country}
+            onChange={handleInputChange}
+            name={"country"}
+            type={"text"}
+            required
+          />
+          <H4>Profession:</H4>
+          <InputForm
+            value={form.profession}
+            onChange={handleInputChange}
+            name={"profession"}
+            type={"text"}
+            required
+          />
+          <H4> Why should you go on this trip? </H4>
+          <Textarea
+            value={form.description}
+            onChange={handleInputChange}
+            name={"description"}
+            required
+          />
+          <SendBtn> Apply </SendBtn>
+        </form>
       </div>
-      <SendBtn onClick={handleApply}> Apply </SendBtn>
-    </div>
+    </>
   );
 };
 
